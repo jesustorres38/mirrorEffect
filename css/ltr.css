@@ -383,6 +383,14 @@ body {
   color: #283A97;
 }
 
+.toggle {
+  direction: ltr;
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 995px;
+}
+
 @media (min-width: 575px) {
   .wrapper {
     padding: 5px 10px;

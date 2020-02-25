@@ -1,0 +1,77 @@
+body {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.nav__list {
+  padding-right: 0px;
+}
+
+.nav__button i {
+  margin: 0px 5px 0px 0px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.menu__bar {
+  padding-right: 0px;
+  padding-left: 30px;
+}
+
+.menu__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.menu__search {
+  direction: ltr;
+  margin-bottom: 5px;
+}
+
+.menu__button {
+  direction: rtl;
+}
+
+.menu__button i {
+  margin: 0px 5px 0px 0px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.menu__list {
+  padding-right: 0px;
+}
+
+.info__link {
+  margin: 5px 4px 0px 0px;
+}
+
+@media (min-width: 575px) {
+  .nav__item {
+    margin: 0px 30px 0px 0px;
+  }
+  .menu__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .menu__logo {
+    margin: 0px 0px 5px 4px;
+  }
+}
+
+@media (min-width: 960px) {
+  .footer__copyright {
+    text-align: left;
+  }
+}
+/*# sourceMappingURL=rtl.css.map */
