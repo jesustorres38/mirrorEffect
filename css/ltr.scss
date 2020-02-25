@@ -1,7 +1,6 @@
 @import "variables";
 @import "mixin";
 
-
 html {
   box-sizing: border-box;
 }
@@ -23,23 +22,23 @@ body {
 
 .wrapper {
   width: 100%;
-  max-width: 980px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 5px;
   background-color: $white;
 }
 
 .nav {
   &__list {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0px;
     list-style-type: none;
-    margin: 20px 0px 5px; 
+    margin: 20px 0px 5px;
   }
 
   &__item {
-    margin-left: 30px;
+    margin: 0px 15px 20px 15px;
   }
 
   &__link {
@@ -52,23 +51,13 @@ body {
   }
 }
 
-.content {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .menu {
-  width: 660px;
-  margin-right: 10px;
-  flex-wrap: wrap;
-  flex-direction: row;
 
   &__bar {
-    flex: 1;
     height: 60px;
     background-color: $darkBlue;
     margin-bottom: 5px;
-    padding-right: 40px;
+    padding-right: 30px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -76,37 +65,27 @@ body {
   }
 
   &__box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
+    @include centerContent();
     font-size: 10px;
     color: $white;
     border: 2px solid white;
+    padding: 5px;
     height: 40px;
   }
 
-  &__wrapper {
-    display: flex;
-  }
-
   &__logo {
+    @include centerContent();
     height: 50px;
     background-color: $grey;
-    width: 45%;
-    margin-right: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
   }
 
   &__search {
+    @include centerContent();
     height: 50px;
     background-color: $grey;
-    width: 55%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
   }
 
   &__searchBox {
@@ -117,15 +96,16 @@ body {
   }
 
   &__button {
-    @include button()
+    @include button();
   }
 
   &__options {
     border-bottom: 2px solid $grey;
+    margin-bottom: 10px;
   }
 
   &__list {
-    display: flex;
+    @include centerContent();
     flex-wrap: wrap;
     list-style-type: none;
     padding-left: 0px;
@@ -133,43 +113,43 @@ body {
   }
 
   &__item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include centerContent();
     flex-direction: column;
     width: 90px;
-    margin: 5px 4px 0px 0px; 
+    margin-right: 4px;
+    margin-bottom: 4px;
     background-color: $lightBlue;
     padding: 10px 0px;
     color: $white;
     cursor: pointer;
 
-    &:hover, 
+    &:hover,
     &--hover {
       background-color: $darkBlue;
     }
+  }
 
-    p {
-      margin: 5px 0px 0px;
-    }
+  &__label {
+    margin: 5px 0px 0px;
   }
 
   &__breadcrumb {
-    margin: 25px 0px 25px 40px;
-    
-     span {
-       color: $orange;
-     }
+    margin: 25px;
+
+    span {
+      color: $orange;
+    }
   }
 }
 
 .info {
-  width: 290px;
+  width: 100%;
 
   &__personal {
     background-color: $lightBlue;
     color: $white;
     padding: 15px 10px;
+    margin-bottom: 10px;
   }
 
   &__name {
@@ -197,37 +177,82 @@ body {
     justify-content: center;
     margin-top: 15px;
     width: 50%;
+  }
+
+  &__link {
+    font-weight: bold;
+    margin: 5px 0px 0px 4px;
+    font-size: 11px;
+    color: $white;
+    text-decoration: none;
+
+    span {
+      font-weight: normal;
+      font-size: 10px;
+    }
+  }
+
+  &__suggestion {
+    background-color: $grey;
+    padding: 15px;
+  }
+
+  &__question {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
 
     p {
+      margin: 0px;
+      font-size: 16px;
+      color: rgb(68, 116, 95);
       font-weight: bold;
-      margin: 5px 0px 0px 4px;
-      font-size: 11px;
-
-      span {
-        font-weight: normal;
-        font-size: 10px;
-      }
     }
+  }
+
+  &__minimize {
+    background-color: $darkBlue;
+    padding: 5px 10px;
+    color: $white;
+    font-weight: bold;
+  }
+
+  &__demo {
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+    padding: 5px;
+  }
+
+  &__text {
+    width: 150px;
+    margin-left: 5px;
+  }
+
+  &__button {
+    width: 70px;
+    color: $orange;
+    font-weight: bold;
+    display: flex;
   }
 }
 
 .footer {
   width: 100%;
-  padding: 20px 10px;
-  max-width: 960px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  padding: 5px;
 
   &__list {
-    margin: 0;
+    margin: 20px 0px 5px;
     padding: 0;
+    width: 100%;
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
-    margin-right: 30px;
+    margin: 0px 15px 20px 15px;
   }
 
   &__link {
@@ -236,7 +261,7 @@ body {
   }
 
   &__copyright {
-    text-align: right;
+    margin: 0px 15px;
 
     a {
       text-decoration: none;
@@ -245,3 +270,96 @@ body {
   }
 }
 
+@media (min-width: 575px) {
+  .wrapper {
+    padding: 5px 10px;
+  }
+
+  .nav {
+    &__list {
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    &__item {
+      margin: 0px 0px 0px 30px;
+    }
+  }
+
+  .menu {
+    &__wrapper {
+      display: flex;
+    }
+
+    &__logo {
+      width: 65%;
+      margin-right: 4px;
+    }
+
+    &__list {
+      justify-content: flex-start;
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+
+    &__personal,
+    &__suggestion {
+      width: 49%;
+      height: fit-content;
+    }
+  }
+
+  .footer {
+    padding: 5px 10px;
+  }
+
+}
+
+@media (min-width: 960px) {
+
+  .wrapper {
+    padding: 5px 20px;
+    max-width: 995px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu {
+    width: 69%;
+  }
+
+  .info {
+    display: block;
+    width: 30%;
+
+    &__personal,
+    &__suggestion {
+      width: 100%;
+      height: fit-content;
+    }
+  }
+
+  .footer {
+    padding: 5px 20px;
+    max-width: 995px;
+    display: flex;
+    justify-content: space-between;
+
+    &__list {
+      width: 49%;
+    }
+
+    &__copyright {
+      width: 49%;
+      margin: 20px 0px 0px;
+      text-align: right;
+    }
+  }
+}

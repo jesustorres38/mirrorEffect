@@ -18,3 +18,9 @@
     margin-left: 5px;
   }
 }
+
+@mixin centerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
